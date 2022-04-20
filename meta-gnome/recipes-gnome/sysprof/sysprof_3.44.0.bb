@@ -15,6 +15,9 @@ DEPENDS += " \
     json-glib \
     libunwind \
 "
+# nongnu libunwind needs porting to RV32
+DEPENDS:remove:riscv32 = "libunwind"
+
 SRC_URI += "file://0001-meson-Check-for-libunwind-instead-of-libunwind-gener.patch"
 SRC_URI[archive.sha256sum] = "ab5d9f5b71973b3088d58a1bfdf1dc23c39a02f5fce4e5e9c73e034b178b005b"
 
